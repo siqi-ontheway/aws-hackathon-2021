@@ -46,12 +46,15 @@
  - **Nginx部署前端静态资源**。用户通过nginx/html/resources访问前端静态页面。而Ajax请求则会通过Nginx反向代理到三台不同的应用服务器。
  - **三台EC2部署后端项目打成的jar包**。使用./deploy.sh &即可在后台启动，使用tail -f nohup.out即可查看项目启动、运行的信息。
  - **基于Token实现分布式会话**。用UUID生成登录凭证token，然后将生成的token作为KEY，UserModel作为VALUE存入到Redis服务器。
-### 三级缓存
-#### 一级缓存：
+### 多级缓存
+<p><img src="https://lh4.googleusercontent.com/tjdQVZrhFZ1JXZlkVH1ja5tx8vkA5zuc6rjMYI9YLNAAYo3gaIKIKhU5M5PIS_VjqHVDQuATviG4AXPSmHB8HvbCp9sGIORLECETFtIUYcU10GFDRKh8Ax42DfgErJNVIgiUacKe" height='500px'/></p>
+
+
+#### Nginx + Lua缓存：
 OpenResty对Nginx进行了扩展，集成了lua开发环境。使用OpenResty的Shared dict，把压力转移到了Nginx服务器，后面两个Tomcat服务器压力减小。同时减少了与后面两个Tomcat服务器、Redis服务器和数据库服务器的网络I/O，当网络I/O成为瓶颈时，Shared dict提供了优化的方法。
-#### 二级缓存：
+#### 本地缓存：
 在Redis的前面再添加一层“本地热点”缓存，使用了Google的Guava Cache方案利用本地JVM的内存存放多次查询的数据。Guava Cache除了线程安全外，还可以控制超时时间，提供淘汰机制。
-#### 三级缓存：
+#### Redis缓存：
 修改ItemController.getItem接口，先从Redis服务器获取，若没有，则从数据库查询并存到Redis服务。有的话直接用。
 ## 接口规范
 ### **登陆**
