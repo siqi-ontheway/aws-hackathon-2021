@@ -1,7 +1,8 @@
 # aws-hackathon-2021
 
 ## Demo 
- - Link:http://miaosha/resources/listitem.html
+ - Video: https://drive.google.com/file/d/1yIn86H5hs_UNpfZZlm6rCLF_KGLn6LMP/view?usp=sharing
+ - Link: http://miaosha/resources/listitem.html 
  - Login :111
  - Password: 111
 
