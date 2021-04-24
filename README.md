@@ -47,7 +47,7 @@
  - **三台EC2部署后端项目打成的jar包**。使用./deploy.sh &即可在后台启动，使用tail -f nohup.out即可查看项目启动、运行的信息。
  - **基于Token实现分布式会话**。用UUID生成登录凭证token，然后将生成的token作为KEY，UserModel作为VALUE存入到Redis服务器。
 ### 多级缓存
-<p><img src="https://lh4.googleusercontent.com/tjdQVZrhFZ1JXZlkVH1ja5tx8vkA5zuc6rjMYI9YLNAAYo3gaIKIKhU5M5PIS_VjqHVDQuATviG4AXPSmHB8HvbCp9sGIORLECETFtIUYcU10GFDRKh8Ax42DfgErJNVIgiUacKe" height='500px'/></p>
+<p><img src="https://lh4.googleusercontent.com/e6_9542Gs0ZhC27kHTpzBC-OEW5VNTdlE8-4Vkt6p88xawVaqQBdbUU4oO8CMbEtN3vQcaDME-uN39dTylFoeE7mFt5U5DUwbJxBTSr_8ThCx3tYShRC43gPkI2k0sZ97aXsFr4O" height='500px'/></p>
 
 
 #### Nginx + Lua缓存：
