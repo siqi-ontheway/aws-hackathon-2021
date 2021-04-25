@@ -2,9 +2,6 @@
 
 ## Demo 
  - Video: https://drive.google.com/file/d/1yIn86H5hs_UNpfZZlm6rCLF_KGLn6LMP/view?usp=sharing
- - Link: http://miaosha/resources/listitem.html 
- - Login :111
- - Password: 111
 
 ## 项目背景
 为了让更多人了解并培养使用亚马逊电子书的习惯，我们设计并实现了一个模拟亚马逊的电子书促销系统。
